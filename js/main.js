@@ -1,0 +1,21 @@
+const car=(name,model,owner,year,phone,image)=>({name,model,owner,year,phone,image})
+const cars=[
+    car('Ford','Focus', 'Denis', '2016', '+79121234567', 'images/focus.jpg'),
+    car('Ford','Mondeo', 'Max', '2017', '+79152223337', 'images/mondeo.jpg'),
+    car('Ford','Mustang', 'Yuriy', '2019', '+7985166572160', 'images/mustang.jpg'),
+    car('Porshe','911', 'Olga', '2018', '+7985133572160', 'images/porshe911.jpg')
+]
+new Vue({
+    el: '#app',
+    data:{
+        cars:cars,
+        car: cars[2],
+        selectedCarIndex:0
+    },
+    methods:{
+        selectCar: function(index){
+            this.car=cars[index];
+            this.selectedCarIndex=index
+        }
+    }
+})

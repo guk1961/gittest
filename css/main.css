@@ -1,10 +1,6 @@
-body{
-
-    background-color: cornflowerblue;
+.detailed-car-image{
+    height: 200px;
 }
-p{
-    color: crimson;
-}
-h2{
-    font-size: 50px;
-}
+.pointer{
+    cursor: pointer;
+}    
