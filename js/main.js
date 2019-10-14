@@ -9,13 +9,30 @@ new Vue({
     el: '#app',
     data:{
         cars:cars,
-        car: cars[2],
-        selectedCarIndex:0
+        car: cars[0],
+        selectedCarIndex:0,
+        phoneVisibility:false,
+        search:''
     },
     methods:{
         selectCar: function(index){
             this.car=cars[index];
-            this.selectedCarIndex=index
+            this.selectedCarIndex=index;
+            this.phoneVisibility=false
         }
-    }
+        },
+    computed:{
+        phoneBtnText(){
+            return this.phoneVisibility ? 'Hide phone':'Show phone'},
+            filteredCars(){
+//                return this.cars
+                return this.cars.filter(car=>{
+                    return car.name.indexOf(this.search) > -1 || 
+                    car.model.toUpperCase().indexOf(this.search.toUpperCase()) > -1
+                })            
+            }
+    
+        }
+        
+    
 })
